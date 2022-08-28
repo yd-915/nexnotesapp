@@ -40,7 +40,7 @@ function Edit({ match, history }) {
                     editProduct(_id, obj)
                         .then(res => {
                             if (!res.error) {
-                                history.push(`/categories/${category}/${_id}/details`)
+                                history.push(`https://nexnotesapp.herokuapp.com/categories/${category}/${_id}/details`)
                             } else {
                                 setLoading(false);
                                 setError(res.error);
@@ -54,7 +54,7 @@ function Edit({ match, history }) {
             editProduct(_id, obj)
                 .then(res => {
                     if (!res.error) {
-                        history.push(`/categories/${category}/${_id}/details`)
+                        history.push(`https://nexnotesapp.herokuapp.com/categories/${category}/${_id}/details`)
                     } else {
                         setLoading(false);
                         setError(res.error);
