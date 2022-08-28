@@ -27,7 +27,7 @@ function Aside({ params, history }) {
         archiveSell(params._id)
             .then(res => {
                 setShowArchive(false);
-                history.push(`/profile/${params.seller}`);
+                history.push(`https://notexchange.shop/profile/${params.seller}`);
             })
             .catch(err => console.log(err))
     }
@@ -40,7 +40,7 @@ function Aside({ params, history }) {
         e.preventDefault();
         createChatRoom(params.sellerId, message)
             .then((res) => {
-                history.push(`/messages/${res.messageId}`)
+                history.push(`https://notexchange.shop//messages/${res.messageId}`)
             })
             .catch(err => console.log(err))
     }
