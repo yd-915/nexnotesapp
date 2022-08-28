@@ -11,25 +11,25 @@ function CategoriesNav() {
     return (
         <div className="container" id="categories">
             <h1 style={{textAlign: "center", color: '#FFFFFF'}}>SECTIONS</h1>
-            <Link to="/categories/all">
+            <Link to="https://nexnotesapp.herokuapp.com/categories/all">
                 <Button variant="dark" id="all"><TiSortAlphabetically />All</Button>{' '}
             </Link>
-            <Link to="/categories/properties">
+            <Link to="https://nexnotesapp.herokuapp.com/categories/properties">
                 <Button variant="dark" id="properties"><CgMathPercent/>Math</Button>{' '}
             </Link>
-            <Link to="/categories/auto">
+            <Link to="https://nexnotesapp.herokuapp.com/categories/auto">
                 <Button variant="dark" id="auto"><GiMaterialsScience />Physics</Button>{' '}
             </Link>
-            <Link to="/categories/home">
+            <Link to="https://nexnotesapp.herokuapp.com/categories/home">
                 <Button variant="dark" id="home"><GiSoapExperiment />Chemistry</Button>{' '}
             </Link>
-            <Link to="/categories/electronics">
+            <Link to="https://nexnotesapp.herokuapp.com/categories/electronics">
                 <Button variant="dark" id="electronics"><FcBiomass/>Biology</Button>{' '}
             </Link>
-            <Link to="/categories/clothes">
+            <Link to="https://nexnotesapp.herokuapp.com/categories/clothes">
                 <Button variant="dark" id="clothes"><ImCogs />Engineering</Button>{' '}
             </Link>
-            <Link to="/categories/new">
+            <Link to="https://nexnotesapp.herokuapp.com/categories/new">
                 <Button variant="dark" id="new"><GiPaintBrush />Arts</Button>{' '}
             </Link>
            
