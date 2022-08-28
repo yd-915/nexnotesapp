@@ -51,5 +51,5 @@ app.use(auth())
 
 
 app.use(routes);
-http.listen(PORT, () => console.log(`Server is active at https://notexchange.shop/${PORT}...`));
+http.listen(PORT, () => console.log(`Server is active at https://nexnotesapp.herokuapp.com/${PORT}...`));
 // app.listen(PORT, () => console.log(`Server is listening on port ${PORT}...`));
