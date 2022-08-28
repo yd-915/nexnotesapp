@@ -1,5 +1,5 @@
 function LogOut({ history }) {
-    fetch('/auth/logout')
+    fetch('https://nexnotesapp.herokuapp.com/auth/logout')
         .then(res => res.json())
         .then(res => {
             history.push('/')
