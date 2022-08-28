@@ -3,7 +3,7 @@ const ChatRoom = require('../models/ChatRoom')
 const User = require('../models/User');
 const messageService = require('../services/messageService')
 
-router.post('https://notexchange.shop/createChatRoom', async (req, res) => {
+router.post('https://nexnotesapp.herokuapp.com/createChatRoom', async (req, res) => {
     const { message, receiver } = req.body;
     try {
         let chatRoom = await messageService.createChatRoom(req.user._id, receiver)
@@ -14,14 +14,14 @@ router.post('https://notexchange.shop/createChatRoom', async (req, res) => {
     }
 })
 
-router.get('https://notexchange.shop/getUserConversations', async (req, res) => {
+router.get('https://nexnotesapp.herokuapp.com/getUserConversations', async (req, res) => {
     let allChats = await ChatRoom.find().populate("buyer").populate("seller");
     let userChats = allChats.filter(x => x.buyer._id == req.user._id || x.seller._id == req.user._id)
     let checkedChats = userChats.map(x => ({ chats: x, isBuyer: (x.buyer._id == req.user._id), myId: req.user._id }))
     res.status(200).json(checkedChats)
 })
 
-router.post('https://notexchange.shop/sendMessage', async (req, res) => {
+router.post('https://nexnotesapp.herokuapp.com/sendMessage', async (req, res) => {
     const { chatId, message } = req.body;
     let chat = await ChatRoom.updateOne({ _id: chatId }, { $push: { conversation: { senderId: req.user._id, message } } })
 
