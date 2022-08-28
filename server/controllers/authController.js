@@ -15,7 +15,7 @@ router.post('https://nexnotesapp.herokuapp.com/register', async (req, res) => {
     }
 });
 
-router.post('https://notexchange.shop/login', (req, res) => {
+router.post('https://nexnotesapp.herokuapp.com/login', (req, res) => {
     authService.loginUser(req.body)
         .then(token => {
             jwt.verify(token, SECRET, (err, decoded) => {
