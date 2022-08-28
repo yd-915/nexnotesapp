@@ -5,7 +5,7 @@ const authService = require('../services/authService');
 const { SECRET, COOKIE_NAME } = require('../config/config');
 const jwt = require('jsonwebtoken');
 
-router.post('https://notexchange.shop/register', async (req, res) => {
+router.post('https://nexnotesapp.herokuapp.com/register', async (req, res) => {
     try {
         let createdUser = await authService.registerUser(req.body);
         res.status(201).json({ _id: createdUser._id });
@@ -33,12 +33,12 @@ router.post('https://notexchange.shop/login', (req, res) => {
         .catch(error => res.status(500).json({ error: error }))
 });
 
-router.get('https://notexchange.shop/logout', (req, res) => {
+router.get('https://nexnotesapp.herokuapp.com/logout', (req, res) => {
     res.clearCookie(COOKIE_NAME);
     res.status(200).json({ message: 'Successfully logged out' })
 });
 
-router.get('https://notexchange.shop/getUser', async (req, res) => {
+router.get('https://nexnotesapp.herokuapp.com/getUser', async (req, res) => {
     if (req.user) {
         let user = await authService.getUser(req.user._id);
         res.status(200).json({user: {_id: user._id, name: user.name, email: user.email, 
