@@ -1,4 +1,4 @@
-const baseUrl = ' https://notexchange.shop/';
+const baseUrl = 'https://nexnotesapp.herokuapp.com/';
 
 export async function registerUser(userData) {
     return (await fetch(`${baseUrl}/auth/register`, {
