@@ -38,11 +38,11 @@ export async function editProduct(id, product) {
 
 
 export async function activateSell(id) {
-    return (await fetch(`/products/enable/${id}`)).json()
+    return (await fetch(`https://nexnotesapp.herokuapp.com/products/enable/${id}`)).json()
 }
 
 export async function archiveSell(id) {
-    return (await fetch(`/products/archive/${id}`)).json()
+    return (await fetch(`https://nexnotesapp.herokuapp.com/products/archive/${id}`)).json()
 }
 
 export async function wishProduct(id) {
