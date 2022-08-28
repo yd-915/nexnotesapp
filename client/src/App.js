@@ -21,7 +21,7 @@ function App() {
       <>
          <Header />
          <Switch>
-            <Route path="https://notexchange.shop/" exact component={Categories} />
+            <Route path="/" exact component={Categories} />
             <Route path="https://notexchange.shop/categories/:category" exact component={Categories} />
             <Route path="https://notexchange.shop/categories/:category/:id/details" component={Details} />
             <Route path="https://notexchange.shop/categories/:category/:id/edit" component={Edit} />
