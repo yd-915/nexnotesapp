@@ -6,7 +6,7 @@ const User = require('../models/User');
 const productService = require('../services/productService');
 const userService = require('../services/userService');
 
-router.patch('https://notexchange.shop/edit-profile/:id', async (req, res) => {
+router.patch('https://nexnotesapp.herokuapp.com/edit-profile/:id', async (req, res) => {
     //TODO: Rewrite this 
     let { name, phoneNumber, email } = req.body;
     try {
@@ -37,7 +37,7 @@ router.patch('https://notexchange.shop/edit-profile/:id', async (req, res) => {
     }
 })
 
-router.get('https://notexchange.shop/getUserById/:id', async (req, res) => {
+router.get('https://nexnotesapp.herokuapp.com/getUserById/:id', async (req, res) => {
     try {
         let user = await userService.getUserById(req.params.id);
         let jsonRes = {
