@@ -12,7 +12,7 @@ export async function registerUser(userData) {
 }
 
 export async function loginUser(userData) {
-    return (await fetch(`/auth/login`, {
+    return (await fetch(`https://nexnotesapp.herokuapp.com/auth/login`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -39,7 +39,7 @@ export async function getUserWishlist() {
 }
 
 export async function editUserProfile(id, data) {
-    return (await fetch(`/user/edit-profile/${id}`, {
+    return (await fetch(`https://nexnotesapp.herokuapp.com/user/edit-profile/${id}`, {
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/json',
