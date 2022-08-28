@@ -27,7 +27,7 @@ router.get('/', async (req, res) => {
     }
 })
 
-router.get('https://notexchange.shop/:category', async (req, res) => {
+router.get('https://nexnotesapp.herokuapp.com/:category', async (req, res) => {
     const { page } = req.query;
     try {
         let products = await Product.paginate({ category: req.params.category }, { page: parseInt(page) || 1, limit: 10 });
@@ -37,7 +37,7 @@ router.get('https://notexchange.shop/:category', async (req, res) => {
     }
 });
 
-router.get('https://notexchange.shop/specific/:id', async (req, res) => {
+router.get('https://nexnotesapp.herokuapp.com/specific/:id', async (req, res) => {
     try {
         let product = await (await Product.findById(req.params.id)).toJSON()
         let seller = await (await User.findById(product.seller)).toJSON()
@@ -64,7 +64,7 @@ router.get('https://notexchange.shop/specific/:id', async (req, res) => {
     }
 });
 
-router.post('https://notexchange.shop/create', async (req, res) => {
+router.post('https://nexnotesapp.herokuapp.com/create', async (req, res) => {
     let { title, price, description, city, category, image } = req.body;
     try {
         let errors = [];
@@ -94,7 +94,7 @@ router.post('https://notexchange.shop/create', async (req, res) => {
     }
 });
 
-router.patch('https://notexchange.shop/edit/:id', isAuth, async (req, res) => {
+router.patch('https://nexnotesapp.herokuapp.com/edit/:id', isAuth, async (req, res) => {
     //TODO: Rewrite this 
     let { title, price, description, city, category, image } = req.body;
     try {
@@ -128,7 +128,7 @@ router.patch('https://notexchange.shop/edit/:id', isAuth, async (req, res) => {
     }
 })
 
-router.get('https://notexchange.shop/sells/active/:id', async (req, res) => {
+router.get('https://nexnotesapp.herokuapp.com/sells/active/:id', async (req, res) => {
     try {
         let userId = '';
         if (req.params.id) {
@@ -143,7 +143,7 @@ router.get('https://notexchange.shop/sells/active/:id', async (req, res) => {
     }
 });
 
-router.get('https://notexchange.shop/sells/archived', async (req, res) => {
+router.get('https://nexnotesapp.herokuapp.com/sells/archived', async (req, res) => {
     try {
         let user = await (await User.findById(req.user._id).populate('createdSells')).toJSON();
         res.status(200).json({ sells: user.createdSells.filter(x => x.active == false), user });
@@ -152,7 +152,7 @@ router.get('https://notexchange.shop/sells/archived', async (req, res) => {
     }
 });
 
-router.get('https://notexchange.shop/enable/:id', async (req, res) => {
+router.get('https://nexnotesapp.herokuapp.com/enable/:id', async (req, res) => {
     try {
         await Product.updateOne({ _id: req.params.id }, { active: true });
         res.status(200).json({ msg: "Activated" });
@@ -161,7 +161,7 @@ router.get('https://notexchange.shop/enable/:id', async (req, res) => {
     }
 });
 
-router.get('https://notexchange.shop/archive/:id', async (req, res) => {
+router.get('https://nexnotesapp.herokuapp.com/archive/:id', async (req, res) => {
     try {
         await Product.updateOne({ _id: req.params.id }, { active: false });
         res.status(200).json({ msg: "Archived" });
@@ -171,7 +171,7 @@ router.get('https://notexchange.shop/archive/:id', async (req, res) => {
 });
 
 
-router.get('https://notexchange.shop/wish/:id', async (req, res) => {
+router.get('https://nexnotesapp.herokuapp.com/wish/:id', async (req, res) => {
     try {
         let user = await User.findById(req.user._id);
 
@@ -191,7 +191,7 @@ router.get('https://notexchange.shop/wish/:id', async (req, res) => {
     }
 });
 
-router.get('https://notexchange.shop/wishlist/:id', async (req, res) => {
+router.get('https://nexnotesapp.herokuapp.com/wishlist/:id', async (req, res) => {
     try {
         let user = await (await User.findById(req.user._id).populate('wishedProducts')).toJSON();
 
