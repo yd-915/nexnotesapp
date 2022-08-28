@@ -30,7 +30,7 @@ function Register({ history }) {
         registerUser(userData)
             .then(res => {
                 if (!res.error) {
-                    history.push('/auth/login')
+                    history.push('https://nexnotesapp.herokuapp.com/auth/login')
                 } else {
                     setLoading(false);
                     setError(res.error);
@@ -108,7 +108,7 @@ function Register({ history }) {
                         <Button variant="dark" className="col-lg-12 btnAuth" type="submit">Sign Up</Button>
                     }
 
-                    <p style={{color:"#FFFFFF"}} className="bottom-msg-paragraph">Already have an account? <Link to="/auth/login">Sign In</Link>!</p>
+                    <p style={{color:"#FFFFFF"}} className="bottom-msg-paragraph">Already have an account? <Link to="https://nexnotesapp.herokuapp.com/auth/login">Sign In</Link>!</p>
 
                     <p  style={{color:"#FFFFFF"}} className="bottom-msg-paragraph">We do not share your personal information with third-party entities nor do we track it. <Link to="/auth/login">Private Policy</Link></p>
                 </Form>
