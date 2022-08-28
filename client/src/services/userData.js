@@ -1,4 +1,4 @@
-const baseUrl = 'http://localhost:5000';
+const baseUrl = ' https://notexchange.shop/';
 
 export async function registerUser(userData) {
     return (await fetch(`${baseUrl}/auth/register`, {
