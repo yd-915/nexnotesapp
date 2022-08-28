@@ -37,7 +37,7 @@ class AddProduct extends Component {
                             this.setState({ errors: res.error })
                             this.setState({ alertShow: true })
                         } else {
-                            this.props.history.push(`/categories/${category}/${res.productId}/details`)
+                            this.props.history.push(`https://nexnotesapp.herokuapp.com/categories/${category}/${res.productId}/details`)
                         }
                     })
                     .catch(err => console.error('Creating product err: ', err))
