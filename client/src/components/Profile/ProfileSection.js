@@ -20,7 +20,7 @@ function ProfileSection({ params }) {
                         <p><FaSellsy /> {params.totalSells} item(s) for sales</p>
                     </Col>
                     <span id="edit-icon">
-                        <Link to={`/profile/${params._id}/edit`}><GrEdit /></Link>
+                        <Link to={`https://nexnotesapp.herokuapp.com/profile/${params._id}/edit`}><GrEdit /></Link>
                     </span>
                 </Row>
             </div>
