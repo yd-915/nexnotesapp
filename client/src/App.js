@@ -22,18 +22,18 @@ function App() {
          <Header />
          <Switch>
             <Route path="/" exact component={Categories} />
-            <Route path="https://nexnotesapp.herokuapp.com/categories/:category" exact component={Categories} />
-            <Route path="https://nexnotesapp.herokuapp.com/categories/:category/:id/details" component={Details} />
-            <Route path="https://nexnotesapp.herokuapp.com/categories/:category/:id/edit" component={Edit} />
-            <Route path="https://nexnotesapp.herokuapp.com/auth/login" exact component={Login} />
-            <Route path="https://nexnotesapp.herokuapp.com/auth/register" exact component={Register} />
-            <Route path="https://nexnotesapp.herokuapp.com/auth/logout" exact render={LogOut} />
-            <Route path='https://nexnotesapp.herokuapp.com/add-product' exact component={CreateSell} />;
-            <Route path='https://nexnotesapp.herokuapp.com/profile/:id' exact component={Profile} />;
-            <Route path='https://notexchange.shop/profile/:id/edit' exact component={EditProfile} />;
-            <Route path='https://nexnotesapp.herokuapp.com/messages' exact component={Messages} />;
-            <Route path='https://nexnotesapp.herokuapp.com/pay' exact component={Pay} />;
-            <Route path='https://nexnotesapp.herokuapp.com/messages/:id' exact component={Messages} />;
+            <Route path="/categories/:category" exact component={Categories} />
+            <Route path="/categories/:category/:id/details" component={Details} />
+            <Route path="/categories/:category/:id/edit" component={Edit} />
+            <Route path="/auth/login" exact component={Login} />
+            <Route path="/auth/register" exact component={Register} />
+            <Route path="/auth/logout" exact render={LogOut} />
+            <Route path="/add-product" exact component={CreateSell} />;
+            <Route path='/profile/:id' exact component={Profile} />;
+            <Route path='/:id/edit' exact component={EditProfile} />;
+            <Route path='/messages' exact component={Messages} />;
+            <Route path='/pay' exact component={Pay} />;
+            <Route path='/:id' exact component={Messages} />;
             <Route component={Error404} />
          </Switch>
          <Footer />
