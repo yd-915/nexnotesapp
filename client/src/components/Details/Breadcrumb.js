@@ -5,10 +5,10 @@ function BreadcrumbNav({ params }) {
     return (
         <Breadcrumb>
             <li className="breadcrumb-item">
-                <Link to="/">Home</Link>
+                <Link to="https://notexchange.shop/">Home</Link>
             </li>
             <li className="breadcrumb-item">
-                <Link to={`/categories/${params.category}`}>{params.category}</Link>
+                <Link to={`https://notexchange.shop/categories/${params.category}`}>{params.category}</Link>
             </li>
             <li  className="breadcrumb-item">
                 <Link to={`/categories/${params.category}/${params._id}/details`}>{params.title}</Link>
